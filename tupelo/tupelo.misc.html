@@ -34,8 +34,15 @@ Returns: HID
 Returns a new HexID</pre></div></div><div class="public anchor" id="var-sha-uuid"><h3>sha-uuid</h3><div class="usage"><code>(sha-uuid)</code></div><div class="doc"><pre class="plaintext">Inputs: []
 Returns: s/Str
 
-Returns a string that is the SHA-1 hash of the `uuid/v1`.</pre></div></div><div class="public anchor" id="var-shell-cmd"><h3>shell-cmd</h3><div class="usage"><code>(shell-cmd cmd-str)</code></div><div class="doc"><pre class="plaintext">Run a command represented as a string in an OS shell (default=/bin/bash).
-Example: 'ls -ldF *'  </pre></div></div><div class="public anchor" id="var-str-.3Esha"><h3>str-&gt;sha</h3><div class="usage"></div><div class="doc"><pre class="plaintext">Returns the SHA-1 hex string for a string
+Returns a string that is the SHA-1 hash of the `uuid/v1`.</pre></div></div><div class="public anchor" id="var-shell-cmd"><h3>shell-cmd</h3><div class="usage"><code>(shell-cmd cmd-str)</code></div><div class="doc"><pre class="plaintext">Runs a command string in the default OS shell (/bin/bash); returns result in a Clojure map.
+ Example:
+
+(shell-cmd "ls -ldF *")
+
+  ;=&gt;   {:exit    0     ; unix exit status (0 -&gt; normal)
+         :err    ''     ; text from any errors
+         :out    '...'  ; text output as would printed to console
+        } </pre></div></div><div class="public anchor" id="var-str-.3Esha"><h3>str-&gt;sha</h3><div class="usage"></div><div class="doc"><pre class="plaintext">Returns the SHA-1 hex string for a string
 </pre></div></div><div class="public anchor" id="var-take-dist"><h3>take-dist</h3><div class="usage"><code>(take-dist n coll)</code></div><div class="doc"><pre class="plaintext">Returns a sequence of n items from a collection, distributed
 evenly between first &amp; last elements, which are always included.</pre></div></div><div class="public anchor" id="var-uuid-.3Estr"><h3>uuid-&gt;str</h3><div class="usage"></div><div class="doc"><pre class="plaintext">Returns the SHA-1 hex string for a UUID
 </pre></div></div><div class="public anchor" id="var-with-dots"><h3>with-dots</h3><h4 class="type">macro</h4><div class="usage"><code>(with-dots &amp; body)</code></div><div class="doc"><pre class="plaintext">Increments indentation level of all spy, spyx, or spyxx expressions within the body.
