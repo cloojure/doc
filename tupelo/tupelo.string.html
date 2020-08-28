@@ -43,7 +43,7 @@ Returns: s/Str
 
 Performs sprintf-like formatting for CLJ &amp; CLJS:
 
-     (format "%8.2f" 123.456789) =&gt; '  123.46'
+       (format "%8.2f" 123.456789) =&gt; '  123.46'
 </pre></div></div><div class="public anchor" id="var-grep"><h3>grep</h3><div class="usage"><code>(grep pattern text)</code></div><div class="doc"><pre class="plaintext">Inputs: [pattern :- s/Regex text :- s/Str]
 
 Given a multi-line text string, returns a string containing lines matching a regex pattern.</pre></div></div><div class="public anchor" id="var-hex.3F"><h3>hex?</h3><div class="usage"><code>(hex? &amp; args)</code></div><div class="doc"><pre class="plaintext">Returns true iff every char passes tupelo.chars/hex?
@@ -93,10 +93,12 @@ Pads a string on the left until it is at least N chars in size</pre></div></div>
 Returns: s/Str
 
 Pads a string on the right until it is at least N chars in size</pre></div></div><div class="public anchor" id="var-phonetic-alphabet"><h3>phonetic-alphabet</h3><div class="usage"></div><div class="doc"><pre class="plaintext">A map from keyword character to string phonetic name:
+
 {:a "alpha"    :b "bravo"    :c "charlie"  :d "delta"    :e "echo"     :f "foxtrot"  :g "golf"
  :h "hotel"    :i "india"    :j "juliett"  :k "kilo"     :l "lima"     :m "mike"     :n "november"
  :o "oscar"    :p "papa"     :q "quebec"   :r "romeo "   :s "sierra"   :t "tango"    :u "uniform"
- :v "victor"   :w "whiskey"  :x "x-ray"    :y "yankee"   :z "zulu" } </pre></div></div><div class="public anchor" id="var-pluralize-with"><h3>pluralize-with</h3><div class="usage"><code>(pluralize-with N base-str)</code></div><div class="doc"><pre class="plaintext">Returns `base-str` when N=1; otherwise appends an `s`
+ :v "victor"   :w "whiskey"  :x "x-ray"    :y "yankee"   :z "zulu" }
+</pre></div></div><div class="public anchor" id="var-pluralize-with"><h3>pluralize-with</h3><div class="usage"><code>(pluralize-with N base-str)</code></div><div class="doc"><pre class="plaintext">Returns `base-str` when N=1; otherwise appends an `s`
 </pre></div></div><div class="public anchor" id="var-quotes-.3Edouble"><h3>quotes-&gt;double</h3><div class="usage"><code>(quotes-&gt;double arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- s/Str]
 Returns: s/Str
 
@@ -118,9 +120,10 @@ Returns: InputStream</pre></div></div><div class="public anchor" id="var-tabs-.3
 Returns: s/Str
 
 Replaces all tabs with appropriate number of spaces (default tab-size =&gt; 8)
+ Usage:
 
-   Usage:   (tabs-&gt;spaces   'abc&lt;tab&gt;def'  =&gt; 'ab      cd'
-            (tabs-&gt;spaces 4 'ab&lt;tab&gt;cd'    =&gt; 'ab  cd'
+      (tabs-&gt;spaces   'abc&lt;tab&gt;def'  =&gt; 'ab      cd'
+      (tabs-&gt;spaces 4 'ab&lt;tab&gt;cd'    =&gt; 'ab  cd'
 </pre></div></div><div class="public anchor" id="var-take"><h3>take</h3><div class="usage"><code>(take n txt)</code></div><div class="doc"><pre class="plaintext">Inputs: [n :- s/Int txt :- s/Str]
 Returns: s/Str
 

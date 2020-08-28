@@ -28,13 +28,13 @@ Converts a vector of unsigned byte values [0..255] into one of signed byte value
 newline when 100 dots have been printed. Displays the running dot count at the beginning of each line.
 Usage:
 
-    (ns xxx.core
-      (:require [tupelo.misc :as tm]))
-    (tm/dots-config! {:decimation 10} )
-    (tm/with-dots
-      (doseq [ii (range 2345)]
-        (tm/dot)
-        (Thread/sleep 5)))
+      (ns demo.core
+        (:require [tupelo.misc :as tm]))
+      (tm/dots-config! {:decimation 10} )
+      (tm/with-dots
+        (doseq [ii (range 2345)]
+          (tm/dot)
+          (Thread/sleep 5)))
 </pre></div></div><div class="public anchor" id="var-dot-counter-watch-fn"><h3>dot-counter-watch-fn</h3><div class="usage"><code>(dot-counter-watch-fn key dot-counter-ref old-count new-count)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-dots-config.21"><h3>dots-config!</h3><div class="usage"><code>(dots-config! ctx)</code></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-edn-.3Esha"><h3>edn-&gt;sha</h3><div class="usage"><code>(edn-&gt;sha edn-data)</code></div><div class="doc"><pre class="plaintext">Inputs: [edn-data]
 Returns: s/Str
 
@@ -83,8 +83,10 @@ Returns a new HexID</pre></div></div><div class="public anchor" id="var-normaliz
 Returns: s/Str
 
 Returns a string that is the SHA-1 hash of the
-  Clojure:         (clj-uuid/v1)
-  ClojureScript:   (cljs.core/random-uuid)  </pre></div></div><div class="public anchor" id="var-shell-cmd"><h3>shell-cmd</h3><div class="usage"><code>(shell-cmd cmd-str)</code></div><div class="doc"><pre class="plaintext">Runs a command string in the default OS shell (/bin/bash); returns result in a Clojure map.
+
+      Clojure:         (clj-uuid/v1)
+      ClojureScript:   (cljs.core/random-uuid)
+      </pre></div></div><div class="public anchor" id="var-shell-cmd"><h3>shell-cmd</h3><div class="usage"><code>(shell-cmd cmd-str)</code></div><div class="doc"><pre class="plaintext">Runs a command string in the default OS shell (/bin/bash); returns result in a Clojure map.
 Example:
 
      (shell-cmd "ls -ldF *")

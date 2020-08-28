@@ -6,28 +6,40 @@ functions, these native-Clojure functions can be used as higher-order functions 
 function arguments, etc.  Each function also provides an optional default-value which
 will be returned if there is an exception during parsing.</pre></div><div class="public anchor" id="var-edn-parsible"><h3>edn-parsible</h3><div class="usage"><code>(edn-parsible data)</code></div><div class="doc"><pre class="plaintext">Traverses a data structure to ensure it can be serialized with `pr-str` and read via
 clojure.tools.reader.edn/read-string. All non-parsible content is replaced
-with `::non-parsible-object`. </pre></div></div><div class="public anchor" id="var-parse-byte"><h3>parse-byte</h3><div class="usage"><code>(parse-byte str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+with `::non-parsible-object`. </pre></div></div><div class="public anchor" id="var-parse-byte"><h3>parse-byte</h3><div class="usage"><code>(parse-byte str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-byte str-val )
+     (parse-byte str-val :default default-val )
+
 A thin wrapper around java.lang.Byte/parseByte.  Parses the string str-val into a byte.
 If the optional default-val is specified, it will be returned in the event of an
-exception.</pre></div></div><div class="public anchor" id="var-parse-double"><h3>parse-double</h3><div class="usage"><code>(parse-double str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+exception.</pre></div></div><div class="public anchor" id="var-parse-double"><h3>parse-double</h3><div class="usage"><code>(parse-double str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-double str-val
+     (parse-double str-val :default default-val )
+
 A thin wrapper around java.lang.Double/parseDouble.  Parses the string str-val into a double.
 If the optional default-val is specified, it will be returned in the event of an
-exception.</pre></div></div><div class="public anchor" id="var-parse-float"><h3>parse-float</h3><div class="usage"><code>(parse-float str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+exception.</pre></div></div><div class="public anchor" id="var-parse-float"><h3>parse-float</h3><div class="usage"><code>(parse-float str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-float str-val
+     (parse-float str-val :default default-val )
+
 A thin wrapper around java.lang.Float/parseFloat.  Parses the string str-val into a float.
 If the optional default-val is specified, it will be returned in the event of an
-exception.</pre></div></div><div class="public anchor" id="var-parse-int"><h3>parse-int</h3><div class="usage"><code>(parse-int str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+exception.</pre></div></div><div class="public anchor" id="var-parse-int"><h3>parse-int</h3><div class="usage"><code>(parse-int str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-int str-val)
+     (parse-int str-val :default default-val )
+
 A thin wrapper around java.lang.Integer/parseInt  Parses the string str-val into a integer.
 If the optional default-val is specified, it will be returned in the event of an
-exception.</pre></div></div><div class="public anchor" id="var-parse-long"><h3>parse-long</h3><div class="usage"><code>(parse-long str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+exception.</pre></div></div><div class="public anchor" id="var-parse-long"><h3>parse-long</h3><div class="usage"><code>(parse-long str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-long str-val)
+     (parse-long str-val :default default-val )
+
 A thin wrapper around java.lang.Long/parseLong.  Parses the string str-val into a long.
 If the optional default-val is specified, it will be returned in the event of an
-exception.</pre></div></div><div class="public anchor" id="var-parse-short"><h3>parse-short</h3><div class="usage"><code>(parse-short str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">( [str-val]
-  [str-val :default default-val] )
+exception.</pre></div></div><div class="public anchor" id="var-parse-short"><h3>parse-short</h3><div class="usage"><code>(parse-short str-val &amp; opts)</code></div><div class="doc"><pre class="plaintext">
+     (parse-short str-val)
+     (parse-short str-val :default default-val )
+
 A thin wrapper around java.lang.Short/parseShort.  Parses the string str-val into a short.
 If the optional default-val is specified, it will be returned in the event of an
 exception.</pre></div></div></div></body></html>
