@@ -5,7 +5,7 @@
 such as in a vector or map.  Typically manipulated via helper functions such as
 `cum-val-set-it` or `cum-vector-append`. Can also be manipulated directly via `swap!` et al.</pre></div></div><div class="public anchor" id="var-*lazy-gen-buffer-size*"><h3>*lazy-gen-buffer-size*</h3><h4 class="dynamic">dynamic</h4><div class="usage"></div><div class="doc"><pre class="plaintext">Default output buffer size for `lazy-gen`.
 </pre></div></div><div class="public anchor" id="var-*spy-enabled*"><h3>*spy-enabled*</h3><h4 class="dynamic">dynamic</h4><div class="usage"></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var-*spy-enabled-map*"><h3>*spy-enabled-map*</h3><h4 class="dynamic">dynamic</h4><div class="usage"></div><div class="doc"><pre class="plaintext"></pre></div></div><div class="public anchor" id="var--.3Efalse"><h3>-&gt;false</h3><div class="usage"><code>(-&gt;false &amp; args)</code></div><div class="doc"><pre class="plaintext">A function that accepts any number of args, does nothing, and returns `false`.
-</pre></div></div><div class="public anchor" id="var--.3Ekw"><h3>-&gt;kw</h3><div class="usage"><code>(-&gt;kw arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol s/Num)]
+</pre></div></div><div class="public anchor" id="var--.3Ekw"><h3>-&gt;kw</h3><div class="usage"><code>(-&gt;kw arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol s/Num Character)]
 Returns: s/Keyword
 
 Coerce arg to a keyword</pre></div></div><div class="public anchor" id="var--.3Elist"><h3>-&gt;list</h3><div class="usage"><code>(-&gt;list arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- [s/Any]]
@@ -31,10 +31,10 @@ Returns: tsk/Set
 Coerces a set into a sorted-set</pre></div></div><div class="public anchor" id="var--.3Esorted-set-generic"><h3>-&gt;sorted-set-generic</h3><div class="usage"><code>(-&gt;sorted-set-generic set-in)</code></div><div class="doc"><pre class="plaintext">Inputs: [set-in :- tsk/Set]
 Returns: tsk/Set
 
-Coerces a set into a sorted-set-generic</pre></div></div><div class="public anchor" id="var--.3Estr"><h3>-&gt;str</h3><div class="usage"><code>(-&gt;str arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol s/Num)]
+Coerces a set into a sorted-set-generic</pre></div></div><div class="public anchor" id="var--.3Estr"><h3>-&gt;str</h3><div class="usage"><code>(-&gt;str arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol s/Num Character)]
 Returns: s/Str
 
-Coerce arg to a string</pre></div></div><div class="public anchor" id="var--.3Esym"><h3>-&gt;sym</h3><div class="usage"><code>(-&gt;sym arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol)]
+Coerce arg to a string</pre></div></div><div class="public anchor" id="var--.3Esym"><h3>-&gt;sym</h3><div class="usage"><code>(-&gt;sym arg)</code></div><div class="doc"><pre class="plaintext">Inputs: [arg :- (s/cond-pre s/Keyword s/Str s/Symbol Character)]
 Returns: s/Symbol
 
 Coerce arg to a symbol</pre></div></div><div class="public anchor" id="var--.3Etrue"><h3>-&gt;true</h3><div class="usage"><code>(-&gt;true &amp; args)</code></div><div class="doc"><pre class="plaintext">A function that accepts any number of args, does nothing, and returns `true`.
@@ -42,7 +42,7 @@ Coerce arg to a symbol</pre></div></div><div class="public anchor" id="var--.3Et
 Returns: [s/Any]
 
 Wraps all args in a vector, as with `clojure.core/vector`. Will (recursively) recognize
-any embedded calls to `(unwrap &lt;vec-or-list&gt;)` (i.e. the 'splice' operator)
+any embedded calls to the splice operator like `(&lt;&gt; [4 5 6)` (a la React)
 and insert their elements as with the unquote-spicing operator (~@). Examples:
 
       (-&gt;vector 1 2 3      4 5 6   7 8 9)   =&gt;  [1 2 3 4 5 6 7 8 9]
@@ -92,7 +92,7 @@ Returns: s/Bool
 
 For any collection coll &amp; element tgt, returns true if coll contains at least one
 instance of tgt; otherwise returns false. Note that, for maps, each element is a
-vector (i.e MapEntry) of the form [key value].</pre></div></div><div class="public anchor" id="var-contains-key.3F"><h3>contains-key?</h3><div class="usage"><code>(contains-key? map-or-set elem)</code></div><div class="doc"><pre class="plaintext">Inputs: [map-or-set :- (s/pred (fn* [p1__18041#] (or (map? p1__18041#) (set? p1__18041#)))) elem :- s/Any]
+vector (i.e MapEntry) of the form [key value].</pre></div></div><div class="public anchor" id="var-contains-key.3F"><h3>contains-key?</h3><div class="usage"><code>(contains-key? map-or-set elem)</code></div><div class="doc"><pre class="plaintext">Inputs: [map-or-set :- (s/pred (fn* [p1__18036#] (or (map? p1__18036#) (set? p1__18036#)))) elem :- s/Any]
 Returns: s/Bool
 
 For any map or set, returns true if elem is a map key or set element, respectively</pre></div></div><div class="public anchor" id="var-contains-val.3F"><h3>contains-val?</h3><div class="usage"><code>(contains-val? map elem)</code></div><div class="doc"><pre class="plaintext">Inputs: [map :- tsk/Map elem :- s/Any]
